@@ -46,7 +46,7 @@
             font-size: 3.2rem;
             line-height: 1.1;
             margin-bottom: 16px;
-            background: linear-gradient(135deg, #fff 0%, var(--primary-light) 100%);
+            background: linear-gradient(135deg, var(--text) 0%, var(--primary-light) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -128,71 +128,52 @@
             margin-bottom: 16px;
         }
 
+        /* Timeline */
         .timeline {
-            position: relative;
-            max-width: 900px;
+            max-width: 700px;
             margin: 0 auto;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--accent), var(--primary), var(--accent));
-            opacity: 0.3;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
         .timeline-item {
-            position: relative;
-            padding-left: 110px;
-            padding-bottom: 40px;
-        }
-        .timeline-item:last-child {
-            padding-bottom: 0;
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 20px;
+            align-items: start;
         }
         .timeline-year {
-            position: absolute;
-            left: 0;
-            top: 0;
             font-family: var(--font-mono);
             font-size: 0.85rem;
             font-weight: 700;
             color: var(--primary);
-            background: rgba(77,138,255,0.1);
-            border: 1px solid rgba(77,138,255,0.2);
-            border-radius: 100px;
-            padding: 4px 14px;
+            padding-top: 18px;
+            text-align: right;
             white-space: nowrap;
         }
-        .timeline-dot {
-            position: absolute;
-            left: 46px;
-            top: 10px;
-            width: 10px;
-            height: 10px;
-            background: var(--primary);
-            border-radius: 50%;
-            box-shadow: 0 0 12px rgba(77,138,255,0.4);
-        }
-        .timeline-item.highlight .timeline-dot {
-            background: var(--accent);
-            box-shadow: 0 0 12px rgba(0,230,184,0.4);
+        .timeline-item.highlight .timeline-year {
+            color: var(--accent);
         }
         .timeline-content {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 20px 24px;
+            padding: 16px 20px;
             transition: all var(--transition);
         }
         .timeline-content:hover {
             border-color: rgba(77,138,255,0.3);
             transform: translateX(4px);
         }
+        .timeline-item.highlight .timeline-content {
+            border-color: rgba(0,230,184,0.2);
+        }
+        .timeline-item.highlight .timeline-content:hover {
+            border-color: rgba(0,230,184,0.4);
+        }
         .timeline-content h3 {
-            font-size: 1rem;
-            margin-bottom: 6px;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
             color: var(--text);
         }
         .timeline-content .org {
@@ -200,9 +181,9 @@
             color: var(--primary-light);
         }
         .timeline-content p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         /* Certifications Grid */
@@ -274,23 +255,12 @@
             .about-photo img {
                 max-width: 280px;
             }
-            .timeline::before {
-                left: 20px;
-            }
             .timeline-item {
-                padding-left: 50px;
+                grid-template-columns: 60px 1fr;
+                gap: 12px;
             }
             .timeline-year {
                 font-size: 0.75rem;
-                padding: 3px 10px;
-                position: relative;
-                left: auto;
-                display: inline-block;
-                margin-bottom: 8px;
-            }
-            .timeline-dot {
-                left: 16px;
-                top: 6px;
             }
             .certs-grid {
                 grid-template-columns: 1fr;
@@ -313,6 +283,11 @@
                 <a href="index.html#faq">FAQ</a>
             </div>
             <div class="nav-actions">
+                <div class="theme-switch" id="themeToggle">
+                    <span class="theme-option theme-active" data-theme="dark"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></span>
+                    <span class="theme-option" data-theme="light"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
+                    <div class="theme-slider"></div>
+                </div>
                 <div class="lang-switch" id="langToggle">
                     <span class="lang-option lang-active" data-lang="en">EN</span>
                     <span class="lang-option" data-lang="de">DE</span>
@@ -365,7 +340,6 @@
             <div class="timeline">
                 <div class="timeline-item highlight">
                     <span class="timeline-year">2026</span>
-                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>Launch Nero.AI, Denys.AI, AI Kurse und AI Clone Platform</h3>
                         <p>Nächste Generation von KI-Produkten und -Plattformen</p>
@@ -373,7 +347,6 @@
                 </div>
                 <div class="timeline-item highlight">
                     <span class="timeline-year">2025</span>
-                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>AI-Zukunftsforschung & PhD-Track</h3>
                         <p>Mensch × KI (West & Ost)</p>
@@ -381,7 +354,6 @@
                 </div>
                 <div class="timeline-item highlight">
                     <span class="timeline-year">2024</span>
-                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>Gründung TKHC GmbH, TKHC Agentic AI, Thorsten Keller Akademie GmbH</h3>
                         <p>Aufbau eines AI-Ökosystems für Beratung, Akademie und Agentic AI</p>
@@ -389,7 +361,6 @@
                 </div>
                 <div class="timeline-item highlight">
                     <span class="timeline-year">2023</span>
-                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>Gründer G2AI GmbH</h3>
                         <p>AI-Consulting & Digitalisierung (Referenz: ATOSS). Internationaler Keynote Speaker</p>
@@ -397,7 +368,6 @@
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-year">2022</span>
-                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>Global Sales, Business Development & Operations</h3>
                         <p><span class="org">Marlin Equity Partners</span> &mdash; Portfolio: Arcserve</p>
@@ -405,7 +375,6 @@
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-year">2021</span>
-                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>EMEA COO (Pre- & Post-IPO)</h3>
                         <p><span class="org">UiPath</span></p>
@@ -413,7 +382,6 @@
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-year">2013</span>
-                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>Chief of Staff Europa & Country Leader DACH</h3>
                         <p><span class="org">Salesforce</span> &mdash; 10-faches Business-Wachstum</p>
@@ -421,7 +389,6 @@
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-year">2006</span>
-                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>Führungs- & Wachstumsrollen</h3>
                         <p><span class="org">Microsoft</span> &mdash; Marketing Lead Greater China, COO Singapur, Big-Deal-Advisor APAC (China, Europa, APAC)</p>
@@ -429,7 +396,6 @@
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-year">2001</span>
-                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>Produkt-, Portfolio- & M&A-Verantwortung</h3>
                         <p><span class="org">Siemens AG</span> &mdash; Internationales Business Planning (München & Taipeh)</p>
@@ -437,7 +403,6 @@
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-year">1998</span>
-                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>Fokus auf menschliches Entscheidungsdenken</h3>
                         <p>West & Ost: Spieltheorie, Verhandlungsführung, Wu Wei</p>

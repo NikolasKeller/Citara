@@ -164,6 +164,39 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(update);
     }
 
+    // --- Theme Toggle (Dark/Light) ---
+    const themeToggle = document.getElementById('themeToggle');
+
+    if (themeToggle) {
+        let currentTheme = localStorage.getItem('citara-theme') || 'dark';
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+
+            const options = themeToggle.querySelectorAll('.theme-option');
+            options.forEach(opt => {
+                opt.classList.toggle('theme-active', opt.dataset.theme === theme);
+            });
+
+            if (theme === 'light') {
+                themeToggle.classList.add('light');
+            } else {
+                themeToggle.classList.remove('light');
+            }
+
+            localStorage.setItem('citara-theme', theme);
+            currentTheme = theme;
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+        });
+
+        // Apply stored theme on page load
+        applyTheme(currentTheme);
+    }
+
     // --- Language Toggle (EN/DE) ---
     const langToggle = document.getElementById('langToggle');
 
