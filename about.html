@@ -136,16 +136,16 @@
         .timeline::before {
             content: '';
             position: absolute;
-            left: 40px;
+            left: 50px;
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(to bottom, var(--primary), var(--accent), var(--primary));
+            background: linear-gradient(to bottom, var(--accent), var(--primary), var(--accent));
             opacity: 0.3;
         }
         .timeline-item {
             position: relative;
-            padding-left: 90px;
+            padding-left: 110px;
             padding-bottom: 40px;
         }
         .timeline-item:last-child {
@@ -154,19 +154,21 @@
         .timeline-year {
             position: absolute;
             left: 0;
-            top: 2px;
+            top: 0;
             font-family: var(--font-mono);
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 0.85rem;
+            font-weight: 700;
             color: var(--primary);
-            width: 72px;
-            text-align: right;
-            padding-right: 24px;
+            background: rgba(77,138,255,0.1);
+            border: 1px solid rgba(77,138,255,0.2);
+            border-radius: 100px;
+            padding: 4px 14px;
+            white-space: nowrap;
         }
         .timeline-dot {
             position: absolute;
-            left: 36px;
-            top: 6px;
+            left: 46px;
+            top: 10px;
             width: 10px;
             height: 10px;
             background: var(--primary);
@@ -276,15 +278,19 @@
                 left: 20px;
             }
             .timeline-item {
-                padding-left: 60px;
+                padding-left: 50px;
             }
             .timeline-year {
-                width: 50px;
-                font-size: 0.7rem;
-                padding-right: 14px;
+                font-size: 0.75rem;
+                padding: 3px 10px;
+                position: relative;
+                left: auto;
+                display: inline-block;
+                margin-bottom: 8px;
             }
             .timeline-dot {
                 left: 16px;
+                top: 6px;
             }
             .certs-grid {
                 grid-template-columns: 1fr;
@@ -357,68 +363,12 @@
                 <h2>25+ Jahre Leadership & Innovation</h2>
             </div>
             <div class="timeline">
-                <div class="timeline-item">
-                    <span class="timeline-year">1998</span>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Fokus auf menschliches Entscheidungsdenken</h3>
-                        <p>West & Ost: Spieltheorie, Verhandlungsführung, Wu Wei</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-year">2001</span>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Produkt-, Portfolio- & M&A-Verantwortung</h3>
-                        <p><span class="org">Siemens AG</span> &mdash; Internationales Business Planning (München & Taipeh)</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-year">2006</span>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Führungs- & Wachstumsrollen</h3>
-                        <p><span class="org">Microsoft</span> &mdash; Marketing Lead Greater China, COO Singapur, Big-Deal-Advisor APAC (China, Europa, APAC)</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-year">2013</span>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Chief of Staff Europa & Country Leader DACH</h3>
-                        <p><span class="org">Salesforce</span> &mdash; 10-faches Business-Wachstum</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-year">2021</span>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>EMEA COO (Pre- & Post-IPO)</h3>
-                        <p><span class="org">UiPath</span></p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-year">2022</span>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Global Sales, Business Development & Operations</h3>
-                        <p><span class="org">Marlin Equity Partners</span> &mdash; Portfolio: Arcserve</p>
-                    </div>
-                </div>
                 <div class="timeline-item highlight">
-                    <span class="timeline-year">2023</span>
+                    <span class="timeline-year">2026</span>
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Gründer G2AI GmbH</h3>
-                        <p>AI-Consulting & Digitalisierung (Referenz: ATOSS). Internationaler Keynote Speaker</p>
-                    </div>
-                </div>
-                <div class="timeline-item highlight">
-                    <span class="timeline-year">2024</span>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Gründung TKHC GmbH, TKHC Agentic AI, Thorsten Keller Akademie GmbH</h3>
-                        <p>Aufbau eines AI-Ökosystems für Beratung, Akademie und Agentic AI</p>
+                        <h3>Launch Nero.AI, Denys.AI, AI Kurse und AI Clone Platform</h3>
+                        <p>Nächste Generation von KI-Produkten und -Plattformen</p>
                     </div>
                 </div>
                 <div class="timeline-item highlight">
@@ -430,11 +380,67 @@
                     </div>
                 </div>
                 <div class="timeline-item highlight">
-                    <span class="timeline-year">2026</span>
+                    <span class="timeline-year">2024</span>
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Launch Nero.AI, Denys.AI, AI Kurse und AI Clone Platform</h3>
-                        <p>Nächste Generation von KI-Produkten und -Plattformen</p>
+                        <h3>Gründung TKHC GmbH, TKHC Agentic AI, Thorsten Keller Akademie GmbH</h3>
+                        <p>Aufbau eines AI-Ökosystems für Beratung, Akademie und Agentic AI</p>
+                    </div>
+                </div>
+                <div class="timeline-item highlight">
+                    <span class="timeline-year">2023</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Gründer G2AI GmbH</h3>
+                        <p>AI-Consulting & Digitalisierung (Referenz: ATOSS). Internationaler Keynote Speaker</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2022</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Global Sales, Business Development & Operations</h3>
+                        <p><span class="org">Marlin Equity Partners</span> &mdash; Portfolio: Arcserve</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2021</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>EMEA COO (Pre- & Post-IPO)</h3>
+                        <p><span class="org">UiPath</span></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2013</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Chief of Staff Europa & Country Leader DACH</h3>
+                        <p><span class="org">Salesforce</span> &mdash; 10-faches Business-Wachstum</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2006</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Führungs- & Wachstumsrollen</h3>
+                        <p><span class="org">Microsoft</span> &mdash; Marketing Lead Greater China, COO Singapur, Big-Deal-Advisor APAC (China, Europa, APAC)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2001</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Produkt-, Portfolio- & M&A-Verantwortung</h3>
+                        <p><span class="org">Siemens AG</span> &mdash; Internationales Business Planning (München & Taipeh)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">1998</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Fokus auf menschliches Entscheidungsdenken</h3>
+                        <p>West & Ost: Spieltheorie, Verhandlungsführung, Wu Wei</p>
                     </div>
                 </div>
             </div>
