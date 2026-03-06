@@ -1333,3 +1333,37 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
     opacity: 1;
     transform: translateY(0);
 }
+
+/* ===========================
+   Language Toggle
+   =========================== */
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 6px 12px;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition);
+    letter-spacing: 0.5px;
+}
+
+.lang-toggle:hover {
+    border-color: var(--primary);
+    color: var(--primary-light);
+    background: rgba(77,138,255,0.08);
+}
+
+.lang-toggle svg {
+    opacity: 0.7;
+}
+
+.lang-toggle:hover svg {
+    opacity: 1;
+}

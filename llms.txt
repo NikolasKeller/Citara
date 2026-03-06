@@ -1,0 +1,161 @@
+# Citara - AI Visibility Engine
+# llms.txt - Structured content for AI agents and LLM crawlers
+# Last updated: 2026-03-06
+
+## Company Profile
+
+Name: Citara
+Parent Company: TKHC Agentic AI
+Type: AI Visibility Engine / Answer Engine Optimization (AEO) Platform
+Founded: 2024
+Founder and CEO: Thorsten Keller
+Headquarters: DACH Region (Germany, Austria, Switzerland)
+Industry: AI Visibility, Answer Engine Optimization (AEO)
+Website: https://citara.com
+Contact Email: office@tkhcagenticai.com
+LinkedIn (Founder): https://www.linkedin.com/in/thorsten-keller-1b361521/
+
+## Mission
+
+Citara helps businesses get cited and recommended by AI search engines including ChatGPT, Google AI Overviews, Perplexity, Claude, and Gemini. The platform provides systematic AI visibility through engineered content, intent research, and multi-LLM tracking.
+
+## Product: Citara AI Visibility Engine
+
+### Core Capabilities
+
+- Deep Intent Research: Cross-platform analysis across Google, ChatGPT, Perplexity, and other AI platforms
+- 9-Point Engineered Content Framework: Structured content creation for maximum AI citation probability
+- 5-LLM Visibility Tracking: Monitoring across Google AI Overviews, ChatGPT, Perplexity, Claude, and Gemini
+- Commercial Prompt Tracking: 50+ prompts tracked weekly
+- Content Volume: 3,000+ words per content piece
+- Linking Strategy: Internal and external linking optimization
+
+### AI Platforms Tracked
+
+1. Google AI Overviews
+2. ChatGPT
+3. Perplexity
+4. Claude
+5. Gemini
+
+## Pricing Tiers
+
+### AEO Starter
+
+- Articles: 30 per month
+- Markets: 1
+- Keyword Analysis: 50,000+
+- Reporting: Weekly report
+
+### AEO Growth
+
+- Articles: 50 per month
+- Markets: Up to 2
+- Prompt Tracking: 50 prompts tracked
+- Strategy: Monthly strategy call
+
+### AEO Scale
+
+- Articles: 100 per month
+- Markets: Up to 10
+- LLM Tracking: 5 major LLMs tracked
+- Integration: Full CMS integration
+- Support: Dedicated account manager
+
+## Frequently Asked Questions
+
+Q: What is an AI Visibility Engine?
+A: A systematic approach to getting a business cited and recommended by AI platforms such as ChatGPT, Google AI Overviews, Perplexity, Claude, and Gemini.
+
+Q: How long does it take to see results?
+A: Initial improvements are typically visible within 30 days. Significant results appear in 60 to 90 days.
+
+Q: Which AI platforms does Citara track?
+A: Google AI Overviews, ChatGPT, Perplexity, Claude, and Gemini.
+
+Q: Do I need to change my website to use Citara?
+A: No. Citara works alongside your existing content strategy without requiring website changes.
+
+Q: How is Citara different from SEO agencies?
+A: Citara is purpose-built for LLM citation and AI visibility, not traditional keyword rankings. SEO focuses on search engine result page positioning; Citara focuses on getting cited in AI-generated answers.
+
+Q: Can Citara support multiple markets?
+A: Yes. The Growth tier supports up to 2 markets. The Scale tier supports up to 10 markets.
+
+## Glossary
+
+AEO (Answer Engine Optimization): The practice of structuring content so that AI search engines can directly cite and reference it in generated responses.
+
+AI Visibility: A measure of how often and how prominently a brand appears in AI-generated search responses across platforms.
+
+LLM Tracking: The process of monitoring brand mentions, citations, and recommendations across large language model outputs.
+
+AI Overviews: Google's AI-generated summaries displayed at the top of search results, synthesizing information from multiple sources.
+
+Content Engineering: The strategic creation and structuring of content specifically optimized for AI crawlers, indexing, and citation.
+
+## Comparisons
+
+### AEO vs SEO
+
+| Attribute              | SEO                                  | AEO                                         |
+|------------------------|--------------------------------------|----------------------------------------------|
+| Goal                   | Rank on search engine result pages   | Get cited in AI-generated answers            |
+| Target                 | Google organic results               | ChatGPT, Perplexity, Gemini, Claude, Google AI Overviews |
+| Content Strategy       | Keyword-optimized pages              | Engineered content for AI citation           |
+| Success Metric         | Rankings, clicks, traffic            | AI citations, mentions, recommendations      |
+| Tracking               | SERP position monitoring             | Multi-LLM output monitoring                  |
+| Time to Results        | 3-6 months typical                   | Initial results within 30 days               |
+
+### Traditional Marketing vs AI Visibility
+
+| Attribute              | Traditional Marketing                | AI Visibility                                |
+|------------------------|--------------------------------------|----------------------------------------------|
+| Channel                | Ads, PR, content marketing           | AI search engine citations                   |
+| Audience Reach         | Users who search and browse          | Users who ask AI for recommendations         |
+| Trust Signal           | Brand recognition, reviews           | AI platform citation and recommendation      |
+| Measurement            | Impressions, clicks, conversions     | AI mentions, citation frequency, prompt coverage |
+
+## Use Cases
+
+### SaaS Companies
+Citara helps SaaS businesses appear in AI-generated recommendations when users ask about software solutions in their category.
+
+### eCommerce
+Online retailers use Citara to get products and brands cited when AI platforms answer purchase-related queries.
+
+### Consultants
+Professional consultants and advisory firms use Citara to establish thought leadership and get recommended by AI search engines.
+
+### Local Businesses
+Local businesses use Citara to appear in AI-generated answers for location-based and service-based queries.
+
+### B2B Companies
+B2B organizations use Citara to ensure their solutions are cited when decision-makers query AI platforms for vendor recommendations.
+
+## Founder and Leadership
+
+### Thorsten Keller - Founder and CEO
+
+Professional Experience: 25+ years of leadership roles at Siemens, Microsoft, Salesforce, and UiPath
+Education: MBA from University of St. Gallen and University of Toronto
+AI Certifications: AI Consultant certified by Northwestern University / Kellogg School of Management and MIT
+
+### Companies Founded
+
+- G2AI GmbH
+- TKHC GmbH
+- TKHC Agentic AI
+
+## Structured Data Summary
+
+entity_type: Company
+entity_name: Citara
+parent_entity: TKHC Agentic AI
+domain: citara.com
+founding_year: 2024
+location: DACH Region
+category: AI Visibility, AEO
+platforms_supported: Google AI Overviews, ChatGPT, Perplexity, Claude, Gemini
+pricing_tiers: AEO Starter, AEO Growth, AEO Scale
+target_industries: SaaS, eCommerce, Consulting, Local Business, B2B

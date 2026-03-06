@@ -163,4 +163,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
         requestAnimationFrame(update);
     }
+
+    // --- Language Toggle (EN/DE) ---
+    const langToggle = document.getElementById('langToggle');
+    const langLabel = document.getElementById('langLabel');
+
+    if (langToggle) {
+        let currentLang = localStorage.getItem('citara-lang') || 'en';
+
+        function applyLanguage(lang) {
+            const elements = document.querySelectorAll('[data-de]');
+            elements.forEach(el => {
+                if (lang === 'de') {
+                    if (!el.dataset.en) {
+                        el.dataset.en = el.textContent;
+                    }
+                    el.textContent = el.dataset.de;
+                } else {
+                    if (el.dataset.en) {
+                        el.textContent = el.dataset.en;
+                    }
+                }
+            });
+            if (langLabel) langLabel.textContent = lang.toUpperCase();
+            document.documentElement.lang = lang === 'de' ? 'de' : 'en';
+            localStorage.setItem('citara-lang', lang);
+            currentLang = lang;
+        }
+
+        langToggle.addEventListener('click', () => {
+            const newLang = currentLang === 'en' ? 'de' : 'en';
+            applyLanguage(newLang);
+        });
+
+        // Apply stored language on page load
+        if (currentLang === 'de') {
+            applyLanguage('de');
+        }
+    }
 });
