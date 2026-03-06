@@ -166,7 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Language Toggle (EN/DE) ---
     const langToggle = document.getElementById('langToggle');
-    const langLabel = document.getElementById('langLabel');
 
     if (langToggle) {
         let currentLang = localStorage.getItem('citara-lang') || 'en';
@@ -185,7 +184,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             });
-            if (langLabel) langLabel.textContent = lang.toUpperCase();
+
+            // Update toggle UI
+            const options = langToggle.querySelectorAll('.lang-option');
+            options.forEach(opt => {
+                opt.classList.toggle('lang-active', opt.dataset.lang === lang);
+            });
+            if (lang === 'de') {
+                langToggle.classList.add('de');
+            } else {
+                langToggle.classList.remove('de');
+            }
+
             document.documentElement.lang = lang === 'de' ? 'de' : 'en';
             localStorage.setItem('citara-lang', lang);
             currentLang = lang;

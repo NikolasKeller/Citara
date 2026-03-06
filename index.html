@@ -67,10 +67,11 @@
                 <a href="#faq">FAQ</a>
             </div>
             <div class="nav-actions">
-                <button class="lang-toggle" id="langToggle" aria-label="Switch language">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                    <span id="langLabel">EN</span>
-                </button>
+                <div class="lang-switch" id="langToggle">
+                    <span class="lang-option lang-active" data-lang="en">EN</span>
+                    <span class="lang-option" data-lang="de">DE</span>
+                    <div class="lang-slider"></div>
+                </div>
                 <a href="mailto:office@tkhcagenticai.com" class="btn btn-primary btn-sm" data-de="Kontakt">Contact</a>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
@@ -238,22 +239,22 @@
                     <ul class="pricing-features">
                         <li>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--primary)" stroke="none"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2.5" fill="none"/></svg>
-                            <strong>30</strong> AEO-Optimized Articles / mo
+                            <span><strong>30</strong> <span data-de="AEO-optimierte Artikel / Monat">AEO-Optimized Articles / mo</span></span>
                         </li>
                         <li>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--primary)" stroke="none"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2.5" fill="none"/></svg>
-                            1 Market Focus
+                            <span data-de="1 Markt-Fokus">1 Market Focus</span>
                         </li>
                         <li>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--primary)" stroke="none"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2.5" fill="none"/></svg>
-                            50k+ Keyword Analysis
+                            <span data-de="50k+ Keyword-Analyse">50k+ Keyword Analysis</span>
                         </li>
                         <li>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--primary)" stroke="none"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2.5" fill="none"/></svg>
-                            Weekly Visibility Report
+                            <span data-de="Wöchentlicher Sichtbarkeitsbericht">Weekly Visibility Report</span>
                         </li>
                     </ul>
-                    <a href="mailto:office@tkhcagenticai.com" class="btn btn-outline btn-block">Get Started</a>
+                    <a href="mailto:office@tkhcagenticai.com" class="btn btn-outline btn-block" data-de="Jetzt starten">Get Started</a>
                 </div>
                 <div class="pricing-card pricing-card-featured">
                     <div class="pricing-header">
@@ -263,22 +264,22 @@
                     <ul class="pricing-features pricing-features-light">
                         <li>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)" stroke="none"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="var(--primary)" stroke-width="2.5" fill="none"/></svg>
-                            <strong>50 AEO-Optimized Articles</strong> / mo
+                            <span><strong data-de="50 AEO-optimierte Artikel">50 AEO-Optimized Articles</strong> <span data-de="/ Monat">/ mo</span></span>
                         </li>
                         <li>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)" stroke="none"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="var(--primary)" stroke-width="2.5" fill="none"/></svg>
-                            <strong>Up to 2 Markets</strong> (e.g. DE + EN)
+                            <span><strong data-de="Bis zu 2 Märkte">Up to 2 Markets</strong> (z.B. DE + EN)</span>
                         </li>
                         <li>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)" stroke="none"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="var(--primary)" stroke-width="2.5" fill="none"/></svg>
-                            <strong>50 Prompts</strong> Tracked Weekly
+                            <span><strong>50 Prompts</strong> <span data-de="wöchentlich getrackt">Tracked Weekly</span></span>
                         </li>
                         <li>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)" stroke="none"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="var(--primary)" stroke-width="2.5" fill="none"/></svg>
-                            Monthly Strategy Call
+                            <span data-de="Monatlicher Strategie-Call">Monthly Strategy Call</span>
                         </li>
                     </ul>
-                    <a href="mailto:office@tkhcagenticai.com" class="btn btn-white btn-block">Get Started</a>
+                    <a href="mailto:office@tkhcagenticai.com" class="btn btn-white btn-block" data-de="Jetzt starten">Get Started</a>
                 </div>
                 <div class="pricing-card">
                     <div class="pricing-header">
@@ -288,26 +289,26 @@
                     <ul class="pricing-features">
                         <li>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--primary)" stroke="none"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2.5" fill="none"/></svg>
-                            <strong>100</strong> AEO-Optimized Articles / mo
+                            <span><strong>100</strong> <span data-de="AEO-optimierte Artikel / Monat">AEO-Optimized Articles / mo</span></span>
                         </li>
                         <li>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--primary)" stroke="none"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2.5" fill="none"/></svg>
-                            <strong>Up to 10</strong> Markets
+                            <span><strong data-de="Bis zu 10">Up to 10</strong> <span data-de="Märkte">Markets</span></span>
                         </li>
                         <li>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--primary)" stroke="none"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2.5" fill="none"/></svg>
-                            <strong>5 Major LLMs</strong> Tracked
+                            <span><strong>5 Major LLMs</strong> <span data-de="getrackt">Tracked</span></span>
                         </li>
                         <li>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--primary)" stroke="none"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2.5" fill="none"/></svg>
-                            Full CMS Integration
+                            <span data-de="Volle CMS-Integration">Full CMS Integration</span>
                         </li>
                         <li>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--primary)" stroke="none"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2.5" fill="none"/></svg>
-                            Dedicated Account Manager
+                            <span data-de="Dedizierter Account Manager">Dedicated Account Manager</span>
                         </li>
                     </ul>
-                    <a href="mailto:office@tkhcagenticai.com" class="btn btn-outline btn-block">Get Started</a>
+                    <a href="mailto:office@tkhcagenticai.com" class="btn btn-outline btn-block" data-de="Jetzt starten">Get Started</a>
                 </div>
             </div>
         </div>
