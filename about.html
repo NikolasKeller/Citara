@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us – Thorsten Keller | Citara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>C</text></svg>">
+    <style>
+        /* About Page Styles */
+        .about-hero {
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(77,138,255,0.08) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 80%, rgba(0,230,184,0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .about-hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-hero-text {
+            position: relative;
+            z-index: 1;
+        }
+        .about-hero-text .name-label {
+            font-family: var(--font-mono);
+            color: var(--primary);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .about-hero-text h1 {
+            font-size: 3.2rem;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #fff 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .about-hero-text .tagline {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 28px;
+            letter-spacing: 0.5px;
+        }
+        .about-hero-text .intro {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .about-hero-text .intro strong {
+            color: var(--text);
+        }
+        .about-hero-text .social-links {
+            margin-top: 32px;
+            display: flex;
+            gap: 16px;
+        }
+        .about-hero-text .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            color: var(--text);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all var(--transition);
+        }
+        .about-hero-text .social-links a:hover {
+            border-color: var(--primary);
+            background: rgba(77,138,255,0.08);
+            color: var(--primary-light);
+        }
+        .about-photo {
+            position: relative;
+            z-index: 1;
+        }
+        .about-photo img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: var(--radius-xl);
+            margin: 0 auto;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+            border: 1px solid var(--border);
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 80px 0;
+        }
+        .timeline-section .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .timeline-section .section-tag {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--primary);
+            background: rgba(77,138,255,0.1);
+            padding: 6px 16px;
+            border-radius: 100px;
+            border: 1px solid rgba(77,138,255,0.2);
+            margin-bottom: 20px;
+        }
+        .timeline-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 40px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent), var(--primary));
+            opacity: 0.3;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 90px;
+            padding-bottom: 40px;
+        }
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        .timeline-year {
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            width: 72px;
+            text-align: right;
+            padding-right: 24px;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 36px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(77,138,255,0.4);
+        }
+        .timeline-item.highlight .timeline-dot {
+            background: var(--accent);
+            box-shadow: 0 0 12px rgba(0,230,184,0.4);
+        }
+        .timeline-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            transition: all var(--transition);
+        }
+        .timeline-content:hover {
+            border-color: rgba(77,138,255,0.3);
+            transform: translateX(4px);
+        }
+        .timeline-content h3 {
+            font-size: 1rem;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+        .timeline-content .org {
+            font-weight: 600;
+            color: var(--primary-light);
+        }
+        .timeline-content p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Certifications Grid */
+        .certs-section {
+            padding: 80px 0;
+            background: var(--bg-alt);
+        }
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .cert-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: all var(--transition);
+        }
+        .cert-card:hover {
+            border-color: rgba(77,138,255,0.3);
+            transform: translateY(-2px);
+        }
+        .cert-year {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        .cert-card h3 {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+        .cert-card .cert-org {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 0;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-hero-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .about-hero-text h1 {
+                font-size: 2.2rem;
+            }
+            .about-photo {
+                order: -1;
+            }
+            .about-photo img {
+                max-width: 280px;
+            }
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item {
+                padding-left: 60px;
+            }
+            .timeline-year {
+                width: 50px;
+                font-size: 0.7rem;
+                padding-right: 14px;
+            }
+            .timeline-dot {
+                left: 16px;
+            }
+            .certs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Citara</span>
+            </a>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#how-it-works">How It Works</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#faq">FAQ</a>
+            </div>
+            <div class="nav-actions">
+                <a href="mailto:office@tkhcagenticai.com" class="btn btn-primary btn-sm">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-inner">
+                <div class="about-hero-text">
+                    <div class="name-label">Founder & CEO</div>
+                    <h1>Thorsten Keller</h1>
+                    <p class="tagline">KI-Architektur. Systemdenken. Zukunftslogik.</p>
+                    <p class="intro">
+                        KI-Spezialist Thorsten Keller entwickelt keine Tools &ndash; <strong>er baut tragfähige Systeme.</strong>
+                    </p>
+                    <p class="intro">
+                        Er übersetzt komplexe KI-Technologien und Denys' Wissen, Persönlichkeit und Arbeitsweise in präzise Modelle, die skalierbar, stabil und in der realen Welt anwendbar sind.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/thorsten-keller-1b361521/" target="_blank" rel="noopener">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="mailto:office@tkhcagenticai.com">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            Kontakt
+                        </a>
+                    </div>
+                </div>
+                <div class="about-photo">
+                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQGkmlEhKWcNgw/profile-displayphoto-shrink_800_800/B4EZPNIQy3HoAg-/0/1734341284409?e=1741824000&v=beta&t=placeholder" alt="Thorsten Keller" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Werdegang / Career Timeline -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Werdegang</span>
+                <h2>25+ Jahre Leadership & Innovation</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-year">1998</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Fokus auf menschliches Entscheidungsdenken</h3>
+                        <p>West & Ost: Spieltheorie, Verhandlungsführung, Wu Wei</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2001</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Produkt-, Portfolio- & M&A-Verantwortung</h3>
+                        <p><span class="org">Siemens AG</span> &mdash; Internationales Business Planning (München & Taipeh)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2006</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Führungs- & Wachstumsrollen</h3>
+                        <p><span class="org">Microsoft</span> &mdash; Marketing Lead Greater China, COO Singapur, Big-Deal-Advisor APAC (China, Europa, APAC)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2013</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Chief of Staff Europa & Country Leader DACH</h3>
+                        <p><span class="org">Salesforce</span> &mdash; 10-faches Business-Wachstum</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2021</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>EMEA COO (Pre- & Post-IPO)</h3>
+                        <p><span class="org">UiPath</span></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2022</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Global Sales, Business Development & Operations</h3>
+                        <p><span class="org">Marlin Equity Partners</span> &mdash; Portfolio: Arcserve</p>
+                    </div>
+                </div>
+                <div class="timeline-item highlight">
+                    <span class="timeline-year">2023</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Gründer G2AI GmbH</h3>
+                        <p>AI-Consulting & Digitalisierung (Referenz: ATOSS). Internationaler Keynote Speaker</p>
+                    </div>
+                </div>
+                <div class="timeline-item highlight">
+                    <span class="timeline-year">2024</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Gründung TKHC GmbH, TKHC Agentic AI, Thorsten Keller Akademie GmbH</h3>
+                        <p>Aufbau eines AI-Ökosystems für Beratung, Akademie und Agentic AI</p>
+                    </div>
+                </div>
+                <div class="timeline-item highlight">
+                    <span class="timeline-year">2025</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>AI-Zukunftsforschung & PhD-Track</h3>
+                        <p>Mensch × KI (West & Ost)</p>
+                    </div>
+                </div>
+                <div class="timeline-item highlight">
+                    <span class="timeline-year">2026</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Launch Nero.AI, Denys.AI, AI Kurse und AI Clone Platform</h3>
+                        <p>Nächste Generation von KI-Produkten und -Plattformen</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ausbildungen & Zertifizierungen -->
+    <section class="certs-section">
+        <div class="container">
+            <div class="section-header" style="text-align:center; margin-bottom:60px;">
+                <span class="section-tag" style="display:inline-block; font-family:var(--font-mono); font-size:0.75rem; letter-spacing:3px; text-transform:uppercase; color:var(--primary); background:rgba(77,138,255,0.1); padding:6px 16px; border-radius:100px; border:1px solid rgba(77,138,255,0.2); margin-bottom:20px;">Ausbildung & Zertifizierungen</span>
+                <h2 style="font-size:2.2rem;">Fundament aus Wissen & Praxis</h2>
+            </div>
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <div class="cert-year">1996 – 2000</div>
+                    <h3>Studium der chinesischen Sprache, Wirtschaft & Kultur</h3>
+                    <p class="cert-org">West-Ost-Fokus</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-year">2001</div>
+                    <h3>Magister Politikwissenschaft, Sinologie & Volkswirtschaft</h3>
+                    <p class="cert-org">Ludwig-Maximilians-Universität München</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-year">2006</div>
+                    <h3>Global Executive MBA</h3>
+                    <p class="cert-org">Universität St. Gallen</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-year">2006</div>
+                    <h3>Master of Business Administration</h3>
+                    <p class="cert-org">University of Toronto</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-year">2024</div>
+                    <h3>AI Consultant & AI-Strategie</h3>
+                    <p class="cert-org">Northwestern University Kellogg School of Management & Massachusetts Institute of Technology</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-year">2024 – 2025</div>
+                    <h3>Neuro- & Transformationsausbildungen</h3>
+                    <p class="cert-org">Denys Scharnweber Akademie &mdash; Neuro-Resonanz Practitioner & Master, EMDR Trainer, HeartSeller, Krieger I–II</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-year">2025 – 2026</div>
+                    <h3>Applied Neuroscience & Emotion AI</h3>
+                    <p class="cert-org">Dirk Eilert Akademie &mdash; emTrace Trainer, Mimik-Resonanz Trainer, KI-basiertes Coaching</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-year">2025</div>
+                    <h3>Certified AI & Workflow Specialist</h3>
+                    <p class="cert-org">Asana</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-year">2026</div>
+                    <h3>Lizenzierter HeartSeller</h3>
+                    <p class="cert-org">Lizenzierte AI-Coaching- & Testing-Plattform</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Get Visible in AI Search?</h2>
+                <p>Stop being invisible to AI. Let's build your AI Visibility Engine and start getting cited by ChatGPT, Google AI Overviews, and more.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:office@tkhcagenticai.com" class="btn btn-white btn-lg">
+                        Get Started
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-text">Citara</span>
+                    </a>
+                    <p>AI Visibility Engine — Get your business into AI Overviews, ChatGPT Search, and emerging AI platforms.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <a href="index.html#features">Features</a>
+                    <a href="index.html#how-it-works">How It Works</a>
+                    <a href="index.html#pricing">Pricing</a>
+                    <a href="index.html#faq">FAQ</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="mailto:office@tkhcagenticai.com">Contact</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Citara. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
