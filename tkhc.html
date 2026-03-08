@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TKHC Group - Agentic AI & Partners | Bridging Human & Code</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>T</text></svg>">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "TKHC Group",
+        "alternateName": "TKHC Agentic AI & Partners",
+        "url": "https://tkhc.com",
+        "email": "office@tkhcagenticai.com",
+        "founder": {
+            "@type": "Person",
+            "name": "Thorsten Keller",
+            "jobTitle": "Founder & CEO",
+            "url": "https://www.linkedin.com/in/thorsten-keller-1b361521/"
+        },
+        "description": "TKHC Group operates four companies at the intersection of human psychology, AI technology, and life transformation.",
+        "areaServed": ["DE", "AT", "CH"],
+        "knowsAbout": ["AI Transformation", "Human Psychology", "Career Reinvention", "Business Transformation", "Longevity", "Purpose & Meaning"]
+    }
+    </script>
+    <style>
+        /* TKHC Page Styles */
+        .tkhc-hero {
+            padding: 140px 0 100px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        .tkhc-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 50% 30%, rgba(77,138,255,0.1) 0%, transparent 60%),
+                        radial-gradient(ellipse at 30% 70%, rgba(0,230,184,0.06) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 70%, rgba(77,138,255,0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .tkhc-logo {
+            width: 180px;
+            height: auto;
+            margin: 0 auto 40px;
+            display: block;
+            border-radius: 16px;
+        }
+        .tkhc-hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--text) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .tkhc-hero .hero-promise {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        .tkhc-hero .hero-promise strong {
+            color: var(--accent);
+        }
+
+        /* Vision Section */
+        .vision-section {
+            padding: 100px 0;
+            position: relative;
+        }
+        .vision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .vision-text h2 {
+            font-size: 2.4rem;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+        .vision-text p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .vision-text p strong {
+            color: var(--text);
+        }
+        .vision-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .vision-stat {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            text-align: center;
+            transition: all var(--transition);
+        }
+        .vision-stat:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(77,138,255,0.1);
+        }
+        .vision-stat .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .vision-stat .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Shift Section */
+        .shift-section {
+            padding: 100px 0;
+            background: var(--bg-alt);
+        }
+        .shift-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+        }
+        .shift-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 36px 28px;
+            text-align: center;
+            transition: all var(--transition);
+            opacity: 0;
+            transform: translateY(24px);
+        }
+        .shift-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(77,138,255,0.1);
+        }
+        .shift-card .shift-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(77,138,255,0.15), rgba(0,230,184,0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        .shift-card .shift-icon svg {
+            color: var(--primary);
+            stroke: var(--primary);
+        }
+        .shift-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+        }
+        .shift-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Companies / Portfolio Section */
+        .companies-section {
+            padding: 100px 0;
+        }
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+        .company-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 44px 36px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(24px);
+        }
+        .company-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .company-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(77,138,255,0.12);
+        }
+        .company-card:hover::before {
+            opacity: 1;
+        }
+        .company-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .company-card-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .company-card-icon svg {
+            width: 26px;
+            height: 26px;
+        }
+        .company-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0;
+        }
+        .company-card .company-tagline {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent);
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+        .company-card p.company-desc {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .company-card .company-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.95rem;
+            transition: all var(--transition);
+        }
+        .company-card .company-link:hover {
+            gap: 12px;
+            color: var(--primary-light);
+        }
+        .company-card .company-link svg {
+            width: 18px;
+            height: 18px;
+            transition: transform var(--transition);
+        }
+        .company-card:hover .company-link svg {
+            transform: translateX(4px);
+        }
+        .company-card-active {
+            border-color: rgba(77,138,255,0.3);
+        }
+        .company-card-coming {
+            opacity: 0.7;
+        }
+        .company-card-coming:hover {
+            opacity: 1;
+        }
+        .coming-badge {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            background: rgba(107,114,128,0.15);
+            padding: 4px 12px;
+            border-radius: 100px;
+            display: inline-block;
+        }
+
+        /* Icon backgrounds */
+        .icon-blue { background: linear-gradient(135deg, rgba(77,138,255,0.2), rgba(77,138,255,0.05)); }
+        .icon-green { background: linear-gradient(135deg, rgba(0,230,184,0.2), rgba(0,230,184,0.05)); }
+        .icon-purple { background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(139,92,246,0.05)); }
+        .icon-orange { background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(249,115,22,0.05)); }
+        .icon-blue svg { stroke: #4d8aff; }
+        .icon-green svg { stroke: #00e6b8; }
+        .icon-purple svg { stroke: #8b5cf6; }
+        .icon-orange svg { stroke: #f97316; }
+
+        /* Flywheel Section */
+        .flywheel-section {
+            padding: 100px 0;
+            background: var(--bg-alt);
+        }
+        .flywheel-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .flywheel-content h2 {
+            font-size: 2.4rem;
+            margin-bottom: 24px;
+        }
+        .flywheel-content p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .flywheel-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 48px;
+            flex-wrap: wrap;
+        }
+        .flywheel-node {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px 24px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all var(--transition);
+        }
+        .flywheel-node:hover {
+            border-color: var(--primary);
+            background: rgba(77,138,255,0.08);
+        }
+        .flywheel-arrow {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .tkhc-hero h1 {
+                font-size: 2.5rem;
+            }
+            .vision-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .shift-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .companies-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 640px) {
+            .tkhc-hero {
+                padding: 120px 0 60px;
+            }
+            .tkhc-hero h1 {
+                font-size: 2rem;
+            }
+            .tkhc-logo {
+                width: 140px;
+            }
+            .shift-grid {
+                grid-template-columns: 1fr;
+            }
+            .vision-stats {
+                grid-template-columns: 1fr;
+            }
+            .flywheel-diagram {
+                flex-direction: column;
+            }
+            .flywheel-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="tkhc.html" class="logo">
+                <span class="logo-text">TKHC</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#vision" data-de="Vision">Vision</a>
+                <a href="#companies" data-de="Unternehmen">Companies</a>
+                <a href="about.html" data-de="Gründer">Founder</a>
+            </div>
+            <div class="nav-actions">
+                <div class="theme-switch" id="themeToggle">
+                    <span class="theme-option theme-active" data-theme="dark"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></span>
+                    <span class="theme-option" data-theme="light"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
+                    <div class="theme-slider"></div>
+                </div>
+                <div class="lang-switch" id="langToggle">
+                    <span class="lang-option lang-active" data-lang="en">EN</span>
+                    <span class="lang-option" data-lang="de">DE</span>
+                    <div class="lang-slider"></div>
+                </div>
+                <a href="mailto:office@tkhcagenticai.com" class="btn btn-primary btn-sm" data-de="Kontakt">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="tkhc-hero">
+        <div class="container">
+            <h1>
+                <span data-de="Wir verbinden Mensch">We Bridge the Human</span><br><span data-de="und Code">and the Code</span>
+            </h1>
+            <p class="hero-promise" data-de="Wir verstehen beide Seiten - die Psychologie der Transformation UND die Technologie, die sie antreibt. Ob du deine Karriere neu aufbauen, dein Unternehmen transformieren, neuen Sinn finden oder deine gesündesten Jahre verlängern willst - wir holen dich dort ab, wo du stehst.">
+                We understand both sides - the <strong data-de="Psychologie der Transformation">psychology of transformation</strong> AND the <strong data-de="Technologie, die sie antreibt">technology driving it</strong>. Whether you need to rebuild your career, transform your business, find new purpose, or extend your healthiest years - we meet you where you are.
+            </p>
+            <div class="hero-ctas">
+                <a href="#companies" class="btn btn-primary btn-lg">
+                    <span data-de="Unsere Unternehmen">Our Companies</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="about.html" class="btn btn-outline btn-lg" data-de="Über den Gründer">
+                    Meet the Founder
+                </a>
+            </div>
+        </div>
+        <div class="hero-gradient-bg"></div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision-section" id="vision">
+        <div class="container">
+            <div class="vision-grid">
+                <div class="vision-text">
+                    <span class="section-tag" data-de="Unsere Vision">Our Vision</span>
+                    <h2 data-de="Die Welt verändert sich schneller, als Menschen sich anpassen können">The World Is Changing Faster Than Humans Can Adapt</h2>
+                    <p data-de="Jobs verschwinden. Identitäten, die um Karrieren aufgebaut wurden, zerbrechen. Geschäftsmodelle, die jahrzehntelang funktioniert haben, werden über Nacht obsolet.">
+                        Jobs are disappearing. Identities built around careers are crumbling. Business models that worked for decades are becoming obsolete overnight.
+                    </p>
+                    <p data-de="Und darunter taucht eine tiefere Frage auf: Wenn KI den Großteil unserer Arbeit übernimmt - was gibt unserem Leben dann Sinn, Erfüllung und Zweck?">
+                        And beneath it all, a deeper question is emerging: <strong data-de="Wenn KI den Großteil unserer Arbeit übernimmt - was gibt unserem Leben Sinn, Erfüllung und Zweck?">if AI takes over most of our work, what gives our lives meaning, fulfillment, and purpose?</strong>
+                    </p>
+                    <p data-de="TKHC Group wurde gegründet, um genau diese Frage zu beantworten - an der Schnittstelle von Psychologie, KI-Technologie und Lebenstransformation.">
+                        TKHC Group was founded to answer exactly this question - at the intersection of psychology, AI technology, and life transformation.
+                    </p>
+                </div>
+                <div class="vision-stats">
+                    <div class="vision-stat">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label" data-de="Unternehmen">Companies</div>
+                    </div>
+                    <div class="vision-stat">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label" data-de="Flywheel">Flywheel</div>
+                    </div>
+                    <div class="vision-stat">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label" data-de="Jahre Führungserfahrung">Years Leadership</div>
+                    </div>
+                    <div class="vision-stat">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label" data-de="Menschliches Potenzial">Human Potential</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Shift Section -->
+    <section class="shift-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <span class="section-tag" data-de="Der Wandel">The Shift</span>
+                <h2 data-de="Vier Dimensionen eines fundamentalen Wandels">Four Dimensions of One Fundamental Shift</h2>
+                <p class="section-desc" data-de="KI verändert Arbeit, Identität, Gesundheit und Sinn - und Menschen brauchen sowohl die Technologie als auch die Weisheit, um sich zurechtzufinden.">AI is reshaping work, identity, health, and meaning - and humans need both the technology and the wisdom to navigate it.</p>
+            </div>
+            <div class="shift-grid">
+                <div class="shift-card">
+                    <div class="shift-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <h3 data-de="Arbeit & Karriere">Work & Career</h3>
+                    <p data-de="Jobs verschwinden. Neue entstehen. Die Fähigkeit, sich neu zu erfinden, ist die wichtigste Kompetenz der Zukunft.">Jobs are vanishing. New ones emerge. The ability to reinvent yourself is the most critical skill of the future.</p>
+                </div>
+                <div class="shift-card">
+                    <div class="shift-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    </div>
+                    <h3 data-de="Unternehmen & Geschäft">Business & Enterprise</h3>
+                    <p data-de="Geschäftsmodelle werden über Nacht obsolet. KI-gestützte Sichtbarkeit und Transformation sind der Schlüssel zum Überleben.">Business models become obsolete overnight. AI-powered visibility and transformation are the keys to survival.</p>
+                </div>
+                <div class="shift-card">
+                    <div class="shift-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3 data-de="Gesundheit & Langlebigkeit">Health & Longevity</h3>
+                    <p data-de="Die gesündesten Jahre verlängern - durch KI-gestützte Prävention, Neurowissenschaft und personalisierte Gesundheitsstrategien.">Extend your healthiest years through AI-driven prevention, neuroscience, and personalized health strategies.</p>
+                </div>
+                <div class="shift-card">
+                    <div class="shift-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h3 data-de="Sinn & Zweck">Meaning & Purpose</h3>
+                    <p data-de="Wenn KI die meiste Arbeit übernimmt - was gibt unserem Leben dann Sinn? Die tiefste Frage unserer Zeit verdient eine Antwort.">If AI handles most work - what gives life meaning? The deepest question of our time deserves an answer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Companies / Portfolio Section -->
+    <section class="companies-section" id="companies">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <span class="section-tag" data-de="Unternehmen">Companies</span>
+                <h2 data-de="Ein Einstiegspunkt. Ein Schmerz. Vier Engines.">One Entry Point. One Pain. Four Delivery Engines.</h2>
+                <p class="section-desc" data-de="Jedes Unternehmen adressiert eine andere Dimension desselben fundamentalen Wandels.">Every company addresses a different dimension of the same fundamental shift.</p>
+            </div>
+            <div class="companies-grid">
+                <!-- Citara - Active -->
+                <a href="index.html" class="company-card company-card-active" style="text-decoration: none; color: inherit; cursor: pointer;">
+                    <div class="company-card-header">
+                        <div class="company-card-icon icon-blue">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        </div>
+                        <div>
+                            <h3>Citara</h3>
+                            <div class="company-tagline" data-de="KI-Sichtbarkeit für Unternehmen">AI Visibility Engine</div>
+                        </div>
+                    </div>
+                    <p class="company-desc" data-de="Die Content Engine, die dein Unternehmen in ChatGPT, Google AI Overviews, Perplexity und mehr sichtbar macht. Werde gefunden und zitiert - von Menschen gesehen, von KI empfohlen.">The content engine that makes your business visible in ChatGPT, Google AI Overviews, Perplexity, and beyond. Get found and cited - seen by humans, recommended by AI.</p>
+                    <span class="company-link" data-de="Zu Citara →">
+                        Explore Citara
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+
+                <!-- Career Reinvention - Coming Soon -->
+                <div class="company-card company-card-coming">
+                    <div class="company-card-header">
+                        <div class="company-card-icon icon-green">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div>
+                            <h3 data-de="Karriere-Neuerfindung">Career Reinvention</h3>
+                            <div class="company-tagline" data-de="Dein nächstes Kapitel beginnt hier">Your Next Chapter Starts Here</div>
+                        </div>
+                    </div>
+                    <p class="company-desc" data-de="Karrierecoaching und Transformation für Fach- und Führungskräfte, deren berufliche Identität durch KI erschüttert wird. Neupositionierung, Neuorientierung, Neustart.">Career coaching and transformation for professionals whose work identity is being disrupted by AI. Repositioning, reorientation, reinvention.</p>
+                    <span class="coming-badge" data-de="Demnächst">Coming Soon</span>
+                </div>
+
+                <!-- Health & Longevity - Coming Soon -->
+                <div class="company-card company-card-coming">
+                    <div class="company-card-header">
+                        <div class="company-card-icon icon-orange">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </div>
+                        <div>
+                            <h3 data-de="Gesundheit & Langlebigkeit">Health & Longevity</h3>
+                            <div class="company-tagline" data-de="Die gesündesten Jahre verlängern">Extend Your Healthiest Years</div>
+                        </div>
+                    </div>
+                    <p class="company-desc" data-de="KI-gestützte Gesundheitsstrategien, Neurowissenschaft und Prävention - damit du nicht nur länger, sondern besser lebst.">AI-powered health strategies, neuroscience, and prevention - so you don't just live longer, but live better.</p>
+                    <span class="coming-badge" data-de="Demnächst">Coming Soon</span>
+                </div>
+
+                <!-- Purpose & Meaning - Coming Soon -->
+                <div class="company-card company-card-coming">
+                    <div class="company-card-header">
+                        <div class="company-card-icon icon-purple">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <div>
+                            <h3 data-de="Sinn & Zweck">Purpose & Meaning</h3>
+                            <div class="company-tagline" data-de="Die tiefste Frage unserer Zeit">The Deepest Question of Our Time</div>
+                        </div>
+                    </div>
+                    <p class="company-desc" data-de="Wenn KI die meiste Arbeit übernimmt - was bleibt? Wir helfen Menschen, neuen Sinn, Erfüllung und Zweck in einer post-arbeitszentrierten Welt zu finden.">When AI takes over most work - what remains? We help people find new meaning, fulfillment, and purpose in a post-work-centric world.</p>
+                    <span class="coming-badge" data-de="Demnächst">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flywheel Section -->
+    <section class="flywheel-section">
+        <div class="container">
+            <div class="flywheel-content">
+                <span class="section-tag" data-de="Das Flywheel">The Flywheel</span>
+                <h2 data-de="Ein Einstiegspunkt. Ein Flywheel.">One Entry Point. One Flywheel.</h2>
+                <p data-de="Jeder Kontaktpunkt führt zum nächsten. Geschäftstransformation deckt Karrierefragen auf. Karrierefragen führen zu Sinnsuche. Sinnsuche berührt Gesundheit. Alles ist verbunden.">
+                    Every touchpoint leads to the next. Business transformation uncovers career questions. Career questions lead to purpose seeking. Purpose seeking touches health. Everything is connected.
+                </p>
+                <div class="flywheel-diagram">
+                    <div class="flywheel-node" data-de="Geschäft">Business</div>
+                    <span class="flywheel-arrow">→</span>
+                    <div class="flywheel-node" data-de="Karriere">Career</div>
+                    <span class="flywheel-arrow">→</span>
+                    <div class="flywheel-node" data-de="Sinn">Purpose</div>
+                    <span class="flywheel-arrow">→</span>
+                    <div class="flywheel-node" data-de="Gesundheit">Health</div>
+                    <span class="flywheel-arrow">→</span>
+                    <div class="flywheel-node" data-de="Geschäft">Business</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-de="Bereit für die Transformation?">Ready for Transformation?</h2>
+                <p data-de="Egal ob du dein Unternehmen, deine Karriere oder dein Leben transformieren willst - wir stehen bereit. Ein Gespräch. Ein Einstiegspunkt. Vier Engines.">Whether you need to transform your business, your career, or your life - we're ready. One conversation. One entry point. Four engines.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:office@tkhcagenticai.com" class="btn btn-white btn-lg">
+                        <span data-de="Gespräch starten">Start a Conversation</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="tkhc.html" class="logo">
+                        <span class="logo-text">TKHC</span>
+                    </a>
+                    <p data-de="Agentic AI & Partners - Wir verbinden Mensch und Code an der Schnittstelle von Psychologie, KI und Lebenstransformation.">Agentic AI & Partners - Bridging the human and the code at the intersection of psychology, AI, and life transformation.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-de="Unternehmen">Companies</h4>
+                    <a href="index.html">Citara</a>
+                    <a href="#" style="color: var(--text-muted); pointer-events: none;" data-de="Karriere (demnächst)">Career (Coming Soon)</a>
+                    <a href="#" style="color: var(--text-muted); pointer-events: none;" data-de="Gesundheit (demnächst)">Health (Coming Soon)</a>
+                    <a href="#" style="color: var(--text-muted); pointer-events: none;" data-de="Sinn (demnächst)">Purpose (Coming Soon)</a>
+                </div>
+                <div class="footer-links">
+                    <h4 data-de="Gruppe">Group</h4>
+                    <a href="about.html" data-de="Über den Gründer">Founder</a>
+                    <a href="mailto:office@tkhcagenticai.com" data-de="Kontakt">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4 data-de="Rechtliches">Legal</h4>
+                    <a href="privacy.html" data-de="Datenschutz">Privacy Policy</a>
+                    <a href="terms.html" data-de="AGB">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TKHC Group. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

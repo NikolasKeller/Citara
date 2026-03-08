@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.scaile.tech)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npx.cmd serve --version)",
+      "Bash(where serve)",
+      "Bash(where npx)",
+      "Bash(where node)",
+      "Bash(git init)",
+      "Bash(git remote add origin https://github.com/NikolasKeller/Citara.git)",
+      "Bash(git add index.html styles.css script.js server.js)",
+      "Bash(git commit:*)",
+      "Bash(git push -u origin master)",
+      "Bash(git add index.html)",
+      "Bash(git push origin master)",
+      "Bash(git add index.html privacy.html terms.html)",
+      "Bash(git add about.html index.html privacy.html terms.html)",
+      "Bash(git add index.html about.html privacy.html terms.html styles.css script.js llms.txt images/)",
+      "Bash(git add about.html index.html privacy.html script.js styles.css terms.html images/thorsten-keller.jpg)",
+      "Bash(git push)",
+      "Bash(git add about.html)",
+      "Bash(curl -sL -o logo-microsoft.svg \"https://cdn.simpleicons.org/microsoft/ffffff\")",
+      "Bash(curl -sL -o logo-salesforce.svg \"https://cdn.simpleicons.org/salesforce/ffffff\")",
+      "Bash(curl -sL -o logo-siemens.svg \"https://cdn.simpleicons.org/siemens/ffffff\")",
+      "Bash(curl -sL -o logo-uipath.svg \"https://cdn.simpleicons.org/uipath/ffffff\")",
+      "Bash(ls -la /c/Users/niko_/Visibly/images/logo-*.svg)",
+      "Bash(curl -sL -o logo-microsoft.svg \"https://cdn.simpleicons.org/microsoftazure/ffffff\")",
+      "Bash(curl -sI \"https://cdn.simpleicons.org/microsoft/ffffff\")",
+      "Bash(git add index.html about.html privacy.html terms.html styles.css script.js)",
+      "Bash(git reset HEAD -- .)",
+      "Bash(curl -s http://localhost:3000/tkhc.html)",
+      "Bash(lsof -i -P -n)",
+      "Bash(netstat -tuln)",
+      "Bash(taskkill /F /FI \"WINDOWTITLE eq*\")",
+      "Bash(wmic process list brief)",
+      "Bash(taskkill /IM node.exe /F)",
+      "WebFetch(domain:docs.google.com)"
+    ]
+  }
+}

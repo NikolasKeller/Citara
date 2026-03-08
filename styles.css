@@ -74,6 +74,19 @@
     box-shadow: 0 4px 12px rgba(37,99,235,0.3);
 }
 
+[data-theme="light"] .cta-section .btn-white,
+[data-theme="light"] .pricing-card-featured .btn-white {
+    background: #fff;
+    color: var(--primary);
+    border-color: #fff;
+}
+
+[data-theme="light"] .cta-section .btn-white:hover,
+[data-theme="light"] .pricing-card-featured .btn-white:hover {
+    background: #f0f4ff;
+    box-shadow: 0 4px 12px rgba(255,255,255,0.3);
+}
+
 [data-theme="light"] .section-tag {
     background: rgba(37,99,235,0.08);
     border-color: rgba(37,99,235,0.15);

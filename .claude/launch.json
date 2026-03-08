@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "tkhc-site",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:/Users/niko_/Visibly/server.js"],
+      "port": 3001,
+      "autoPort": true
+    }
+  ]
+}

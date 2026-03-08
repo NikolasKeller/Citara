@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Scroll animations ---
     const animateElements = document.querySelectorAll(
-        '.problem-card, .feature-card, .step-card, .service-card, .result-card, .testimonial-card, .pricing-card, .faq-item'
+        '.problem-card, .feature-card, .step-card, .service-card, .result-card, .testimonial-card, .pricing-card, .faq-item, .company-card, .shift-card'
     );
 
     const observer = new IntersectionObserver(
