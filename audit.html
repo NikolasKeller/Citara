@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free AI Visibility Audit – Citara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>C</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Citara</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" data-de="Startseite">Home</a>
+                <a href="about.html" data-de="Über uns">About Us</a>
+                <a href="index.html#features" data-de="Funktionen">Features</a>
+                <a href="index.html#pricing" data-de="Preise">Pricing</a>
+            </div>
+            <div class="nav-actions">
+                <a href="audit.html" class="btn btn-primary btn-sm" data-de="Kostenloser Audit Check">Free Audit Check</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Audit Section -->
+    <section class="audit-section">
+        <div class="container">
+            <!-- FORM PHASE -->
+            <div id="auditForm" class="audit-phase">
+                <div class="audit-header">
+                    <span class="section-tag" data-de="Kostenloser AI Visibility Audit">Free AI Visibility Audit</span>
+                    <h1 class="audit-title">
+                        <span data-de="Empfiehlt KI">Is AI recommending</span><br>
+                        <span class="gradient-text" data-de="dein Unternehmen?">your business?</span>
+                    </h1>
+                    <p class="section-desc" data-de="Finde es in unter 2 Minuten heraus. Wir testen 7 echte Prompts bei ChatGPT, Perplexity, Claude & Gemini.">
+                        Find out in under 2 minutes. We test 7 real prompts across ChatGPT, Perplexity, Claude & Gemini.
+                    </p>
+                </div>
+                <div class="audit-form-card">
+                    <label class="audit-label">
+                        <span class="audit-label-text" data-de="Firmenname">Company Name</span>
+                        <input type="text" id="companyName" placeholder="e.g. Citara" class="audit-input">
+                    </label>
+                    <label class="audit-label">
+                        <span class="audit-label-text" data-de="Website URL">Website URL</span>
+                        <input type="text" id="websiteUrl" placeholder="e.g. https://citara.ai" class="audit-input">
+                    </label>
+                    <label class="audit-label">
+                        <span class="audit-label-text">
+                            <span data-de="Branche">Industry</span>
+                            <span class="audit-label-optional" data-de="(optional — wir erkennen es automatisch)">(optional — we'll auto-detect)</span>
+                        </span>
+                        <input type="text" id="industryInput" placeholder="e.g. CRM Software, Digital Marketing, Logistics" class="audit-input">
+                    </label>
+                    <button id="runAuditBtn" class="btn btn-primary btn-block btn-lg" disabled>
+                        <span data-de="AI Visibility Audit starten">Run AI Visibility Audit</span>
+                    </button>
+                    <p class="audit-form-note" data-de="🔒 Kein Login nötig · Ergebnisse in unter 2 Minuten · 100% kostenlos">
+                        🔒 No login required · Results in under 2 minutes · 100% free
+                    </p>
+                </div>
+            </div>
+
+            <!-- SCANNING PHASE -->
+            <div id="auditScanning" class="audit-phase" style="display:none;">
+                <div class="audit-scanning-content">
+                    <h2 class="gradient-text" data-de="KI-Plattformen werden gescannt...">Scanning AI Platforms...</h2>
+                    <p class="audit-scanning-sub" id="scanningCompany"></p>
+                    <div class="audit-steps" id="scanSteps">
+                        <div class="scan-step" data-step="0">
+                            <div class="scan-step-indicator pending"></div>
+                            <span data-de="Test-Prompts werden generiert">Generating test prompts</span>
+                        </div>
+                        <div class="scan-step" data-step="1">
+                            <div class="scan-step-indicator pending"></div>
+                            <span data-de="ChatGPT wird abgefragt">Querying ChatGPT</span>
+                        </div>
+                        <div class="scan-step" data-step="2">
+                            <div class="scan-step-indicator pending"></div>
+                            <span data-de="Perplexity wird abgefragt">Querying Perplexity</span>
+                        </div>
+                        <div class="scan-step" data-step="3">
+                            <div class="scan-step-indicator pending"></div>
+                            <span data-de="Claude & Gemini werden abgefragt">Querying Claude & Gemini</span>
+                        </div>
+                        <div class="scan-step" data-step="4">
+                            <div class="scan-step-indicator pending"></div>
+                            <span data-de="Sichtbarkeit wird analysiert & bewertet">Analyzing visibility & scoring</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESULTS PHASE -->
+            <div id="auditResults" class="audit-phase" style="display:none;">
+                <div class="audit-results-header">
+                    <h2 data-de="Dein AI Visibility Report">Your AI Visibility Report</h2>
+                    <p id="resultsCompanyInfo" class="audit-results-sub"></p>
+                </div>
+
+                <!-- Score Card -->
+                <div class="audit-score-card">
+                    <div class="score-ring-container">
+                        <svg id="scoreRing" width="160" height="160" style="transform: rotate(-90deg);">
+                            <circle cx="80" cy="80" r="72" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="8" />
+                            <circle id="scoreArc" cx="80" cy="80" r="72" fill="none" stroke="#00e5a0" stroke-width="8"
+                                stroke-dasharray="452.39" stroke-dashoffset="452.39" stroke-linecap="round"
+                                style="transition: stroke-dashoffset 1.5s ease-out;" />
+                        </svg>
+                        <div class="score-ring-text">
+                            <span class="score-number" id="scoreNumber">0</span>
+                            <span class="score-label-small" data-de="von 100">out of 100</span>
+                        </div>
+                    </div>
+                    <h3 id="scoreLabel" class="score-verdict"></h3>
+                    <p id="scoreDesc" class="score-description"></p>
+                </div>
+
+                <!-- Stats Row -->
+                <div class="audit-stats-row">
+                    <div class="audit-stat-card">
+                        <div class="audit-stat-number" id="statPrompts" style="color: var(--accent);">0</div>
+                        <div class="audit-stat-label" data-de="Getestete Prompts">Prompts Tested</div>
+                    </div>
+                    <div class="audit-stat-card">
+                        <div class="audit-stat-number" id="statFound" style="color: var(--accent);">0</div>
+                        <div class="audit-stat-label" data-de="Gefunden">You Appeared</div>
+                    </div>
+                    <div class="audit-stat-card">
+                        <div class="audit-stat-number" id="statMissed" style="color: #ff3b5c;">0</div>
+                        <div class="audit-stat-label" data-de="Verpasst">You Missed</div>
+                    </div>
+                </div>
+
+                <!-- Competitors -->
+                <div id="competitorsSection" class="audit-competitors" style="display:none;">
+                    <p class="audit-competitors-title" data-de="⚠️ Wettbewerber, die stattdessen erscheinen">⚠️ Competitors appearing instead of you</p>
+                    <div id="competitorsList" class="audit-competitors-list"></div>
+                </div>
+
+                <!-- Prompt Results -->
+                <p class="audit-results-section-title" data-de="Prompt-für-Prompt Ergebnisse">Prompt-by-Prompt Results</p>
+                <div id="promptResults"></div>
+
+                <!-- Assessment -->
+                <div class="audit-assessment" id="assessmentSection">
+                    <h4 data-de="AI Visibility Bewertung">AI Visibility Assessment</h4>
+                    <p id="assessmentText"></p>
+                </div>
+
+                <!-- CTAs -->
+                <div class="audit-ctas">
+                    <a href="https://calendly.com/thorsten-keller-g2ai/30min" target="_blank" class="btn btn-primary btn-block btn-lg" data-de="Kostenloses 30-Minuten Ergebnisgespräch buchen">Book a Free 30-Minute Results Call</a>
+                    <a href="index.html#features" class="btn btn-outline btn-block btn-lg" data-de="Erfahre, wie Citara das löst">Learn How Citara Fixes This</a>
+                </div>
+
+                <p class="audit-run-another" id="runAnotherBtn" data-de="Weiteren Audit starten →">Run another audit →</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-text">Citara</span>
+                    </a>
+                    <p data-de="AI Visibility Engine — Bring dein Unternehmen in AI Overviews, ChatGPT Search und aufstrebende KI-Plattformen.">AI Visibility Engine — Get your business into AI Overviews, ChatGPT Search, and emerging AI platforms.</p>
+                    <p class="powered-by" data-de="Citara ist ein Unternehmen der TKHC Group, powered by G2AI GmbH.">Citara is a <a href="tkhc.html">TKHC Group</a> company, powered by G2AI GmbH.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-de="Produkt">Product</h4>
+                    <a href="index.html#features" data-de="Funktionen">Features</a>
+                    <a href="index.html#how-it-works" data-de="So funktioniert's">How It Works</a>
+                    <a href="index.html#pricing" data-de="Preise">Pricing</a>
+                    <a href="index.html#faq">FAQ</a>
+                </div>
+                <div class="footer-links">
+                    <h4 data-de="Unternehmen">Company</h4>
+                    <a href="about.html" data-de="Über uns">About Us</a>
+                    <a href="https://calendly.com/thorsten-keller-g2ai/30min" target="_blank" data-de="Kontakt">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4 data-de="Rechtliches">Legal</h4>
+                    <a href="privacy.html" data-de="Datenschutz">Privacy Policy</a>
+                    <a href="terms.html" data-de="Nutzungsbedingungen">Terms of Service</a>
+                    <a href="impressum.html" data-de="Impressum">Impressum</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Citara. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed bottom-right toggles -->
+    <div class="fixed-toggles" id="fixedToggles">
+        <div class="theme-switch" id="themeToggle">
+            <span class="theme-option theme-active" data-theme="dark"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></span>
+            <span class="theme-option" data-theme="light"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
+            <div class="theme-slider"></div>
+        </div>
+        <div class="lang-switch" id="langToggle">
+            <span class="lang-option lang-active" data-lang="en">EN</span>
+            <span class="lang-option" data-lang="de">DE</span>
+            <div class="lang-slider"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="audit.js"></script>
+</body>
+</html>
