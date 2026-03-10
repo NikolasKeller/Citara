@@ -3,6 +3,8 @@
 // ===========================
 
 (function () {
+    var API_BASE = "https://citara-production.up.railway.app";
+
     var PROMPT_TEMPLATES = [
         { template: "Who are the best known names in {industry} right now?", platform: "ChatGPT" },
         { template: "Who are the top {industry} providers or experts?", platform: "Perplexity" },
@@ -25,7 +27,7 @@
     // Auto-detect industry from company name via API
     async function detectIndustry(companyName, websiteUrl) {
         try {
-            var response = await fetch("/api/detect-industry", {
+            var response = await fetch(API_BASE + "/api/detect-industry", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ company: companyName, website: websiteUrl }),
@@ -44,7 +46,7 @@
     // Call our backend proxy which routes to the correct AI platform
     async function queryPlatform(companyName, websiteUrl, prompt, platform) {
         try {
-            var response = await fetch("/api/audit", {
+            var response = await fetch(API_BASE + "/api/audit", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
